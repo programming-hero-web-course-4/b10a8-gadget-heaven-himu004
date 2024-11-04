@@ -1,0 +1,297 @@
+[
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 14 Pro",
+    "product_image": "https://i.pinimg.com/564x/ca/43/a1/ca43a11d6672b910f1c19b2c537ba2da.jpg",
+    "category": "iPhone",
+    "price": 999.99,
+    "description": "Apple's latest iPhone with advanced camera and A16 Bionic chip.",
+    "specification": ["6.1-inch OLED display", "128GB Storage", "5G enabled"],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy S22 Ultra",
+    "product_image": "https://i.pinimg.com/564x/79/ba/af/79baaf76abab9b0d804e1c31b94f0d13.jpg",
+    "category": "Smartphones",
+    "price": 1199.99,
+    "description": "Flagship Samsung smartphone with high-resolution display and S Pen.",
+    "specification": [
+      "6.8-inch QHD+ display",
+      "108MP camera",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P003",
+    "product_title": "Xiaomi Mi 11",
+    "product_image": "https://i.pinimg.com/564x/73/44/d6/7344d61be772a9d12c52189a22d7c7a7.jpg",
+    "category": "Smartphones",
+    "price": 749.99,
+    "description": "Xiaomi's high-performance smartphone with AMOLED display.",
+    "specification": ["6.81-inch AMOLED", "108MP camera", "8GB RAM"],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P004",
+    "product_title": "OnePlus 10 Pro",
+    "product_image": "https://i.pinimg.com/564x/c7/9b/ce/c79bce89a595e3bf4bee9ae14d642e73.jpg",
+    "category": "Smartphones",
+    "price": 899.99,
+    "description": "OnePlus flagship phone with Hasselblad cameras and fast charging.",
+    "specification": ["6.7-inch Fluid AMOLED", "5000mAh battery", "5G enabled"],
+    "availability": false,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P005",
+    "product_title": "MacBook Pro 14\"",
+    "product_image": "https://i.pinimg.com/564x/cf/22/06/cf2206c97ec8f095257cb1f510aa40f0.jpg",
+    "category": "MacBook",
+    "price": 1999.99,
+    "description": "Apple's latest MacBook Pro with M1 Pro chip for professional performance.",
+    "specification": ["14-inch Retina display", "M1 Pro chip", "512GB SSD"],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P006",
+    "product_title": "Dell XPS 13",
+    "product_image": "https://i.pinimg.com/564x/c5/93/fc/c593fc0293b5de1a9c6fd7a87f4c6300.jpg",
+    "category": "Laptops",
+    "price": 1099.99,
+    "description": "Ultra-slim laptop with high-resolution InfinityEdge display.",
+    "specification": ["13.3-inch FHD+", "Intel i7", "16GB RAM"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P007",
+    "product_title": "HP Spectre x360",
+    "product_image": "https://i.pinimg.com/564x/52/37/95/523795dbac64f0981e0f8239c4fe6f4d.jpg",
+    "category": "Laptops",
+    "price": 1299.99,
+    "description": "2-in-1 convertible laptop with a touchscreen and stylus support.",
+    "specification": ["13.5-inch touchscreen", "Intel i7", "512GB SSD"],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P008",
+    "product_title": "Apple Watch Series 8",
+    "product_image": "https://i.pinimg.com/736x/76/69/10/766910928bc10a5edd269eb807a3d990.jpg",
+    "category": "Smart Watches",
+    "price": 399.99,
+    "description": "Advanced Apple Watch with health tracking and GPS.",
+    "specification": ["GPS", "Blood oxygen sensor", "Water resistant"],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P009",
+    "product_title": "Samsung Galaxy Watch 5",
+    "product_image": "https://i.pinimg.com/564x/bb/40/80/bb40800306e9ca425b89ba854f8d58ad.jpg",
+    "category": "Smart Watches",
+    "price": 349.99,
+    "description": "Samsung's smartwatch with advanced health and fitness tracking.",
+    "specification": ["GPS", "Heart rate monitoring", "Sleep tracking"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P010",
+    "product_title": "Fitbit Versa 3",
+    "product_image": "https://i.pinimg.com/564x/41/39/fc/4139fc0b8299ccd457faceaf51ffb21d.jpg",
+    "category": "Smart Watches",
+    "price": 229.99,
+    "description": "Fitbit's health-focused smartwatch with GPS and sleep tracking.",
+    "specification": ["24/7 heart rate", "SpO2 monitoring", "Built-in GPS"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P011",
+    "product_title": "Apple AirPods Pro",
+    "product_image": "https://i.pinimg.com/564x/6f/23/9a/6f239a9d705c2f256ee609f1be35c367.jpg",
+    "category": "Accessories",
+    "price": 249.99,
+    "description": "Noise-canceling wireless earbuds with a custom fit.",
+    "specification": [
+      "Active noise cancellation",
+      "Transparency mode",
+      "Wireless charging case"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P012",
+    "product_title": "Samsung Galaxy Buds Pro",
+    "product_image": "https://i.pinimg.com/564x/af/66/cd/af66cd0de97788c58832e5f9f4cbc70a.jpg",
+    "category": "Accessories",
+    "price": 199.99,
+    "description": "Samsung’s high-performance wireless earbuds with ANC.",
+    "specification": [
+      "Active noise cancellation",
+      "IPX7 water resistance",
+      "Wireless charging"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P013",
+    "product_title": "Xiaomi Redmi Note 11",
+    "product_image": "https://i.pinimg.com/564x/45/17/23/451723669761c8c2f9740b1ab83d341a.jpg",
+    "category": "Smartphones",
+    "price": 299.99,
+    "description": "Xiaomi's affordable smartphone with a large battery and FHD+ display.",
+    "specification": ["6.5-inch FHD+", "5000mAh battery", "48MP camera"],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": "P014",
+    "product_title": "Asus ROG Zephyrus G14",
+    "product_image": "https://i.pinimg.com/564x/6d/ce/74/6dce7442791a3525afd2b1c3989e6a27.jpg",
+    "category": "Laptops",
+    "price": 1599.99,
+    "description": "High-performance gaming laptop with NVIDIA GeForce graphics.",
+    "specification": ["14-inch FHD", "AMD Ryzen 9", "RTX 3060"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P015",
+    "product_title": "Apple MacBook Air M1",
+    "product_image": "https://i.pinimg.com/564x/2e/b3/f5/2eb3f55064b17f2b1bce69be7dd0cf0e.jpg",
+    "category": "MacBook",
+    "price": 999.99,
+    "description": "Slim and powerful MacBook Air with Apple's M1 chip.",
+    "specification": ["13.3-inch Retina display", "M1 chip", "256GB SSD"],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P016",
+    "product_title": "Huawei Watch GT 3",
+    "product_image": "https://i.pinimg.com/564x/75/1d/3e/751d3edb729a51d0cfc6c397c36bd0d7.jpg",
+    "category": "Smart Watches",
+    "price": 279.99,
+    "description": "Smartwatch with long battery life and health tracking features.",
+    "specification": ["Heart rate monitoring", "14-day battery", "GPS"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P017",
+    "product_title": "Microsoft Surface Laptop 4",
+    "product_image": "https://i.pinimg.com/564x/8d/a3/90/8da39037509ed54664709df010769ef0.jpg",
+    "category": "Laptops",
+    "price": 1299.99,
+    "description": "Sleek and powerful laptop with PixelSense touchscreen.",
+    "specification": ["13.5-inch touchscreen", "Intel i5", "8GB RAM"],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P018",
+    "product_title": "Sony WH-1000XM4 Headphones",
+    "product_image": "https://i.pinimg.com/736x/d4/84/be/d484be7ea9e3ce607b336cd8d5f6fe7d.jpg",
+    "category": "Accessories",
+    "price": 349.99,
+    "description": "Wireless noise-canceling headphones with long battery life.",
+    "specification": [
+      "30 hours battery life",
+      "Bluetooth 5.0",
+      "Touch controls"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P019",
+    "product_title": "Garmin Forerunner 945",
+    "product_image": "https://i.pinimg.com/564x/d3/f7/51/d3f75151e30eac1ebbd392ad05b3685b.jpg",
+    "category": "Smart Watches",
+    "price": 599.99,
+    "description": "Advanced GPS watch for runners with health metrics.",
+    "specification": ["VO2 max", "Heart rate monitor", "Built-in GPS"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P020",
+    "product_title": "Lenovo Yoga 7i",
+    "product_image": "https://i.pinimg.com/564x/72/12/64/721264354becae52a136429a37ae2d8b.jpg",
+    "category": "Laptops",
+    "price": 999.99,
+    "description": "Versatile 2-in-1 laptop with touchscreen and long battery life.",
+    "specification": ["14-inch FHD", "Intel i5", "256GB SSD"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P021",
+    "product_title": "Apple iPhone 13",
+    "product_image": "https://i.pinimg.com/564x/f2/17/29/f21729a9316b3cedc6c0dbdb3102b118.jpg",
+    "category": "iPhone",
+    "price": 799.99,
+    "description": "Previous generation iPhone with excellent performance and camera.",
+    "specification": ["6.1-inch OLED", "A15 Bionic chip", "Dual 12MP cameras"],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P022",
+    "product_title": "Oppo Find X5 Pro",
+    "product_image": "https://i.pinimg.com/564x/7c/55/e1/7c55e15281e9fcb9d71de93fcea780fa.jpg",
+    "category": "Smartphones",
+    "price": 1049.99,
+    "description": "Flagship Oppo phone with powerful cameras and fast charging.",
+    "specification": [
+      "6.7-inch QHD+",
+      "Snapdragon 8",
+      "80W SuperVOOC charging"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P023",
+    "product_title": "Apple MacBook Pro 16\"",
+    "product_image": "https://i.pinimg.com/564x/d3/32/fb/d332fbc422b9e9bc24e0deff1a508ac5.jpg",
+    "category": "MacBook",
+    "price": 2499.99,
+    "description": "Large-screen MacBook Pro with M1 Max chip for power users.",
+    "specification": ["16-inch Retina display", "M1 Max chip", "1TB SSD"],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P024",
+    "product_title": "Samsung Galaxy Watch 4 Classic",
+    "product_image": "https://i.pinimg.com/564x/bb/40/80/bb40800306e9ca425b89ba854f8d58ad.jpg",
+    "category": "Smart Watches",
+    "price": 399.99,
+    "description": "Classic design smartwatch with advanced fitness features.",
+    "specification": ["Rotating bezel", "ECG monitoring", "GPS"],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P025",
+    "product_title": "MacBook Air 15\" M2",
+    "product_image": "https://i.pinimg.com/564x/c0/84/e0/c084e0977ba887d31817419fc0a1b345.jpg",
+    "category": "MacBook",
+    "price": 1299.99,
+    "description": "Ultra-lightweight 15-inch MacBook Air with the M2 chip.",
+    "specification": ["15-inch Retina display", "M2 chip", "512GB SSD"],
+    "availability": true,
+    "rating": 4.8
+  }
+]
