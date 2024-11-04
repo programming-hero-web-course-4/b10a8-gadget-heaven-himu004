@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({product}) => {
 
@@ -17,11 +18,14 @@ const ProductCard = ({product}) => {
           <h2 className="card-title">{product_title}</h2>
           <p className='text-gray-500'>Price: {price}K</p>
           <div className="card-actions">
+            <Link to={`/product/${product_id}`} >
             <button className="border py-2 px-5 text-[#9538E2] border-[#9538E2] rounded-full">View Details</button>
+            </Link>
           </div>
         </div>
       </div>
     );
 };
+
 
 export default ProductCard;

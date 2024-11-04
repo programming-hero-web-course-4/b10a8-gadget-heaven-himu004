@@ -11,7 +11,7 @@ const Header = () => {
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 "
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -70,7 +70,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl text-white">Gadjet Heaven</a>
+        <a className="btn btn-ghost text-[2.5vw] text-white">Gadjet Heaven</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-white">
@@ -117,12 +117,12 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="flex gap-3 p-2">
-          <div className="bg-white rounded-full p-2">
-            <BsCart2 className="text-xl font-extrabold " />
+        <div className="flex gap-3 p-1">
+          <div className="bg-white rounded-full md:p-2 p-1">
+            <BsCart2 className="md:text-xl font-extrabold " />
           </div>
-          <div className="bg-white rounded-full p-2">
-            <CiHeart className="text-xl extrabold" />
+          <div className="bg-white rounded-full md:p-2 p-1">
+            <CiHeart className="md:text-xl extrabold" />
           </div>
         </div>
       </div>
