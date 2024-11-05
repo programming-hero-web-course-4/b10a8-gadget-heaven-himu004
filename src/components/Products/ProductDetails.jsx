@@ -82,7 +82,7 @@ const ProductDetails = () => {
               <BsCart2 className="md:text-xl font-extrabold " />
             </button>
             <button
-              onClick={handleWishlistList}
+              onClick={() => handleWishlistList(product)}
               className="border rounded-full p-2"
             >
               <CiHeart className="md:text-2xl extrabold" />

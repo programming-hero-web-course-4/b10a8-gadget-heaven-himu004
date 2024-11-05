@@ -7,7 +7,8 @@ import { ProductAssetContext } from "../../context/ProductContext";
 const Header = () => {
 
     const allProducts = useContext(ProductAssetContext);
-    const { wishlistLength, cartAddedProducts } = allProducts; 
+    const { wishlistAddedProduct, cartAddedProducts } = allProducts; 
+    console.log(wishlistAddedProduct);
 
   return (
     <div className="navbar bg-[#9538E2] container mx-auto p-5">
@@ -132,7 +133,7 @@ const Header = () => {
           <div className="bg-white rounded-full md:p-2 p-1 relative">
             <CiHeart className="md:text-xl extrabold relative" />
             {
-                wishlistLength > 0 && <span className="badge badge-secondary badge-sm absolute top-0 right-0">{wishlistLength}</span>
+                wishlistAddedProduct.length > 0 && <span className="badge badge-secondary badge-sm absolute top-0 right-0">{wishlistAddedProduct.length}</span>
             }
           </div>
         </div>

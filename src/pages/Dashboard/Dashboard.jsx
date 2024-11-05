@@ -2,15 +2,25 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProductAssetContext } from "../../context/ProductContext";
 import CartAddedProducts from "./CartAddedProducts";
 import sort from "../../assets/sort.png";
+import Wishlist from "./Wishlist";
 
 const Dashboard = () => {
 
     const [totalPrice, setTotalPrice] = useState(0);
+    const [isActive, setIsActive] = useState(false);
+
+    const handleCart = () => {
+      setIsActive(!isActive);
+    };
+
+    const handleWishlist = () => {
+      setIsActive(!isActive);
+    };
 
     
     
   const allProducts = useContext(ProductAssetContext);
-  const { cartAddedProducts, handleDeleteFromCart, setCartAddedProducts } = allProducts;
+  const { cartAddedProducts, handleDeleteFromCart, setCartAddedProducts, wishlistAddedProduct } = allProducts;
 
   const handleSortByPrice = () => {
     const sortedProducts = [...cartAddedProducts].sort((a, b) => b.price - a.price);
@@ -37,28 +47,36 @@ const Dashboard = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
         <div className="space-x-5">
-          <button className="border rounded-full text-white py-2 px-10 mt-5 text-md hover:bg-white hover:text-[#9538E2]">
+          <button 
+          onClick={handleCart}
+          className={`border rounded-full py-2 px-10 mt-5 text-md is ${isActive ? "bg-white text-[#9538E2]" : "bg-[#9538E2] text-white"}`}>
             Cart
           </button>
-          <button className="border rounded-full text-white py-2 px-10 mt-5 text-md hover:bg-white hover:text-[#9538E2]">
+          <button 
+          onClick={handleWishlist}
+          className={`border rounded-full py-2 px-10 mt-5 text-md is ${isActive ? "bg-[#9538E2] text-white" : "bg-white text-[#9538E2]" }`}>
             Wishlist
           </button>
         </div>
       </div>
 
       <div className="px-10 flex md:flex-row flex-col justify-between py-7">
-        <p className="text-2xl font-bold text-center">Cart</p>
+        <p className="text-2xl font-bold text-center">
+            {
+                isActive ? "Cart" : "Wishlist"
+            }
+        </p>
         <div className="flex md:flex-row flex-col items-center gap-3">
-          <p className="font-bold">Total Cost: {totalPrice}</p>
+          <p className={`font-bold ${isActive ? "" : "hidden"}`}>Total Cost: {totalPrice}</p>
           <button
           onClick={handleSortByPrice}
-            className={`flex items-center gap-1 border border-[#9538E2] rounded-full text-[#9538E2] py-1 px-5 text-md bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent`}
+            className={`flex items-center gap-1 border border-[#9538E2] rounded-full text-[#9538E2] py-1 px-5 text-md bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent ${isActive ? "" : "hidden"}`}  
           >
             Sort By Price
             <img className="w-5" src={sort} alt="" />
           </button>
           <button
-            className={`rounded-full text-white py-1 px-8 text-lg bg-gradient-to-r from-[#9538E2] to-blue-500 hover:from-pink-500 hover:to-orange-500`}
+            className={`rounded-full text-white py-1 px-8 text-lg bg-gradient-to-r from-[#9538E2] to-blue-500 hover:from-pink-500 hover:to-orange-500 ${isActive ? "" : "hidden"}`}
           >
             Purchase
           </button>
@@ -66,9 +84,13 @@ const Dashboard = () => {
       </div>
       <div className="container mx-auto">
 
-        {cartAddedProducts.map((product) => (
-          <CartAddedProducts key={product.product_id} product={product} handleDeleteFromCart={handleDeleteFromCart} />
-        ))}
+        {
+            isActive ? cartAddedProducts.map((product, idx) => (
+                <CartAddedProducts key={idx} product={product} handleDeleteFromCart={handleDeleteFromCart} />
+              )) : wishlistAddedProduct.map((product, idx) => (
+                <Wishlist key={idx} product={product} />
+              ))
+        }
 
       </div>
     </div>
