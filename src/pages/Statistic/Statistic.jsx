@@ -4,56 +4,38 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
+// Sample data representing product prices
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: "Mobile Phones",
+    price: 800, // example price
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: "Laptops",
+    price: 1500, // example price
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: "Watches",
+    price: 300, // example price
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: "Tablets",
+    price: 600, // example price
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: "Headphones",
+    price: 200, // example price
   },
   {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    name: "Smart TVs",
+    price: 1200, // example price
   },
 ];
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
     y + height / 3
-  }
-  ${x + width / 2}, ${y}
+  } ${x + width / 2}, ${y}
   C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
     x + width
   }, ${y + height}
@@ -62,14 +44,13 @@ const getPath = (x, y, width, height) => {
 
 const TriangleBar = (props) => {
   const { fill, x, y, width, height } = props;
-
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-export default function App() {
+const Statistic = () => {
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>Statistic | Gadjet Heaven</title>
       </Helmet>
       <div className="bg-[#9538E2] text-white text-center space-y-3 py-10">
@@ -78,37 +59,42 @@ export default function App() {
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!
         </p>
-        
       </div>
-      <div className="py-10">
-        <p className="font-bold text-2xl p-6">Statistics</p>
-      <BarChart
-        width={1200}
-        height={500}
-        data={data}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Bar
-          dataKey="uv"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-          ))}
-        </Bar>
-      </BarChart>
-    </div>
+      <div className="py-5 container mx-auto">
+        <p className="font-bold text-2xl py-5">Statistics</p>
+        <div className="flex justify-center">
+          <BarChart
+            width={window.innerWidth < 300 ? window.innerWidth - 40 : 1200}
+            height={ window.innerWidth < 300 ? window.innerWidth - 40 : 500}
+            data={data}
+            margin={{
+              top: 20,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Bar
+              dataKey="price"
+              fill="#8884d8"
+              shape={<TriangleBar />}
+              label={{ position: "top" }}
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={colors[index % colors.length]}
+                />
+              ))}
+            </Bar>
+          </BarChart>
+        </div>
+      </div>
     </>
-    
   );
 }
+
+export default  Statistic;
