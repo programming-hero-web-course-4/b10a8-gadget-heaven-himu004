@@ -67,7 +67,17 @@ const TriangleBar = (props) => {
 
 export default function App() {
   return (
-    <div className="py-16 container mx-auto">
+    <>
+      <div className="bg-[#9538E2] text-white text-center space-y-3 py-10">
+        <p className="md:text-4xl text-xl font-bold">Statistics</p>
+        <p className="max-w-xl mx-auto">
+          Explore the latest gadgets that will take your experience to the next
+          level. From smart devices to the coolest accessories, we have it all!
+        </p>
+        
+      </div>
+      <div className="py-10">
+        <p className="font-bold text-2xl p-6">Statistics</p>
       <BarChart
         width={1200}
         height={500}
@@ -94,5 +104,7 @@ export default function App() {
         </Bar>
       </BarChart>
     </div>
+    </>
+    
   );
 }

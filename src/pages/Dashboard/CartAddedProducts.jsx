@@ -7,15 +7,16 @@ const CartAddedProducts = ({ product, handleDeleteFromCart }) => {
     product;
 
   return (
-    <div className="flex space-x-3 bg-white p-5 rounded-xl m-5">
-      <div>
+    
+    <div className="flex md:flex-row flex-col space-x-3 bg-white p-5 rounded-xl m-5">
+      <div className="mx-auto">
         <img className="w-20" src={product_image} alt="" />
       </div>
       <div className="flex justify-between items-center w-full">
-        <div>
-          <h2>{product_title}</h2>
-          <p>{description}</p>
-          <p>Price: {price}K</p>
+        <div className="p-5 md:p-0 space-y-1">
+          <h2 className="font-bold">{product_title}</h2>
+          <p className="text-gray-500">{description}</p>
+          <p className="font-bold">Price: {price}K</p>
         </div>
         <div>
           <button 

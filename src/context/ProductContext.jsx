@@ -48,6 +48,7 @@ const ProductContext = ({ children }) => {
     wishlistLength,
     cartAddedProducts,
     handleDeleteFromCart,
+    setCartAddedProducts
   };
   return (
     <ProductAssetContext.Provider value={allProducts}>

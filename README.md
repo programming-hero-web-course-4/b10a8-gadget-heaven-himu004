@@ -16,6 +16,7 @@ Gadjet Heaven is an engaging e-commerce platform designed for gadget enthusiasts
   - usercan chose products from category wise
   - user can see rpoduct details 
   - in blogs user can read about the products
+  - user can sort their cart by decending iten price
   - Fully Responsive and Mobile friendly 
   - Pixel Perfect
 
