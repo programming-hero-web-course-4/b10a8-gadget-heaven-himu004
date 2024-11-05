@@ -2,31 +2,47 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProductAssetContext } from "../../context/ProductContext";
 import CartAddedProducts from "./CartAddedProducts";
 import sort from "../../assets/sort.png";
+import purchase from "../../assets/purchase.png";
 import Wishlist from "./Wishlist";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [isCartActive, setIsCartActive] = useState(true);
+  const [isWishlistActive, setIsWishlistActive] = useState(false);
+  const navigate = useNavigate();
 
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [isActive, setIsActive] = useState(false);
-
-    const handleCart = () => {
-      setIsActive(!isActive);
-    };
-
-    const handleWishlist = () => {
-      setIsActive(!isActive);
-    };
-
-    
-    
-  const allProducts = useContext(ProductAssetContext);
-  const { cartAddedProducts, handleDeleteFromCart, setCartAddedProducts, wishlistAddedProduct } = allProducts;
-
-  const handleSortByPrice = () => {
-    const sortedProducts = [...cartAddedProducts].sort((a, b) => b.price - a.price);
-    setCartAddedProducts(sortedProducts);
+  const handleCart = () => {
+    setIsCartActive(true);
+    setIsWishlistActive(false);
   };
 
+  const handleWishlist = () => {
+    setIsWishlistActive(true);
+    setIsCartActive(false);
+  };
+
+  const allProducts = useContext(ProductAssetContext);
+  const {
+    cartAddedProducts,
+    handleDeleteFromCart,
+    setCartAddedProducts,
+    wishlistAddedProduct,
+    setWishlistAddedProduct,
+  } = allProducts;
+
+  const handlePurchase = () => {
+    setCartAddedProducts([]);
+    setWishlistAddedProduct([]);
+    navigate("/");
+  };
+
+  const handleSortByPrice = () => {
+    const sortedProducts = [...cartAddedProducts].sort(
+      (a, b) => b.price - a.price
+    );
+    setCartAddedProducts(sortedProducts);
+  };
 
   useEffect(() => {
     let total = 0;
@@ -35,8 +51,6 @@ const Dashboard = () => {
     }
     setTotalPrice(total.toFixed(2));
   }, [cartAddedProducts]);
-
-  
 
   return (
     <div>
@@ -47,14 +61,24 @@ const Dashboard = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
         <div className="space-x-5">
-          <button 
-          onClick={handleCart}
-          className={`border rounded-full py-2 px-10 mt-5 text-md is ${isActive ? "bg-white text-[#9538E2]" : "bg-[#9538E2] text-white"}`}>
+          <button
+            onClick={handleCart}
+            className={`border rounded-full py-2 px-10 mt-5 text-md is ${
+              isCartActive
+                ? "bg-white text-[#9538E2]"
+                : "bg-[#9538E2] text-white"
+            }`}
+          >
             Cart
           </button>
-          <button 
-          onClick={handleWishlist}
-          className={`border rounded-full py-2 px-10 mt-5 text-md is ${isActive ? "bg-[#9538E2] text-white" : "bg-white text-[#9538E2]" }`}>
+          <button
+            onClick={handleWishlist}
+            className={`border rounded-full py-2 px-10 mt-5 text-md is ${
+              isWishlistActive
+                ? "bg-white text-[#9538E2]"
+                : "bg-[#9538E2] text-white"
+            }`}
+          >
             Wishlist
           </button>
         </div>
@@ -62,37 +86,77 @@ const Dashboard = () => {
 
       <div className="px-10 flex md:flex-row flex-col justify-between py-7">
         <p className="text-2xl font-bold text-center">
-            {
-                isActive ? "Cart" : "Wishlist"
-            }
+          {isCartActive ? "Cart" : "Wishlist"}
         </p>
         <div className="flex md:flex-row flex-col items-center gap-3">
-          <p className={`font-bold ${isActive ? "" : "hidden"}`}>Total Cost: {totalPrice}</p>
+          <p className={`font-bold ${isCartActive ? "" : "hidden"}`}>
+            Total Cost: {totalPrice}
+          </p>
           <button
-          onClick={handleSortByPrice}
-            className={`flex items-center gap-1 border border-[#9538E2] rounded-full text-[#9538E2] py-1 px-5 text-md bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent ${isActive ? "" : "hidden"}`}  
+            onClick={handleSortByPrice}
+            className={`flex items-center gap-1 border border-[#9538E2] rounded-full text-[#9538E2] py-1 px-5 text-md bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent ${
+              isCartActive ? "" : "hidden"
+            }`}
           >
             Sort By Price
             <img className="w-5" src={sort} alt="" />
           </button>
           <button
-            className={`rounded-full text-white py-1 px-8 text-lg bg-gradient-to-r from-[#9538E2] to-blue-500 hover:from-pink-500 hover:to-orange-500 ${isActive ? "" : "hidden"}`}
+            onClick={() => document.getElementById("my_modal_1").showModal()}
+            className={`rounded-full text-white py-1 px-8 text-lg bg-gradient-to-r from-[#9538E2] to-blue-500 hover:from-pink-500 hover:to-orange-500 ${
+              isCartActive ? "" : "hidden"
+            }`}
           >
             Purchase
           </button>
         </div>
       </div>
       <div className="container mx-auto">
-
-        {
-            isActive ? cartAddedProducts.map((product, idx) => (
-                <CartAddedProducts key={idx} product={product} handleDeleteFromCart={handleDeleteFromCart} />
-              )) : wishlistAddedProduct.map((product, idx) => (
-                <Wishlist key={idx} product={product} />
-              ))
-        }
-
+        {isCartActive ? (
+          cartAddedProducts.length > 0 ? (
+            cartAddedProducts.map((product, idx) => (
+              <CartAddedProducts
+                key={idx}
+                product={product}
+                handleDeleteFromCart={handleDeleteFromCart}
+              />
+            ))
+          ) : (
+            <p className="text-center text-2xl text-[#9538E2] py-5 font-bold">
+              Your cart is empty
+            </p>
+          )
+        ) : isWishlistActive ? (
+          wishlistAddedProduct.length > 0 ? (
+            wishlistAddedProduct.map((product, idx) => (
+              <Wishlist key={idx} product={product} />
+            ))
+          ) : (
+            <p className="text-center text-2xl text-[#9538E2] py-5 font-bold">
+              Your wishlist is empty
+            </p>
+          )
+        ) : (
+          ""
+        )}
       </div>
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box flex flex-col items-center justify-center">
+          <img src={purchase} alt="" />
+          <p className="py-4 text-xl font-bold">Payment Successfully</p>
+          <div className="divider px-10"></div>
+          <p className="">Thanks for your purchasing</p>
+          <p className="">Total Cost: ${totalPrice}</p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button onClick={handlePurchase} className="btn px-24 text-lg">
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };

@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ProductAssetContext } from "../../context/ProductContext";
 
 const Header = () => {
-
-    const allProducts = useContext(ProductAssetContext);
-    const { wishlistAddedProduct, cartAddedProducts } = allProducts; 
-    console.log(wishlistAddedProduct);
+  const allProducts = useContext(ProductAssetContext);
+  const { wishlistAddedProduct, cartAddedProducts } = allProducts;
+  // console.log(wishlistAddedProduct);
 
   return (
     <div className="navbar bg-[#9538E2] container mx-auto p-5">
@@ -125,16 +124,22 @@ const Header = () => {
       <div className="navbar-end">
         <div className="flex gap-3 p-1">
           <div className="bg-white rounded-full md:p-2 p-1 relative">
-            <BsCart2 className="md:text-xl font-extrabold " />
-            {
-                cartAddedProducts.length > 0 && <span className="badge badge-secondary badge-sm absolute top-0 right-0">{cartAddedProducts.length}</span>
-            }
+            <Link to="/dashboard">
+              <BsCart2 className="md:text-xl font-extrabold " />
+            </Link>
+            {cartAddedProducts.length > 0 && (
+              <span className="badge badge-secondary badge-sm absolute top-0 right-0">
+                {cartAddedProducts.length}
+              </span>
+            )}
           </div>
           <div className="bg-white rounded-full md:p-2 p-1 relative">
             <CiHeart className="md:text-xl extrabold relative" />
-            {
-                wishlistAddedProduct.length > 0 && <span className="badge badge-secondary badge-sm absolute top-0 right-0">{wishlistAddedProduct.length}</span>
-            }
+            {wishlistAddedProduct.length > 0 && (
+              <span className="badge badge-secondary badge-sm absolute top-0 right-0">
+                {wishlistAddedProduct.length}
+              </span>
+            )}
           </div>
         </div>
       </div>

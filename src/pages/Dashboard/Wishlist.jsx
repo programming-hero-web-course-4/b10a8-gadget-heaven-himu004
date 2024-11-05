@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ProductAssetContext } from "../../context/ProductContext";
 
 const Wishlist = ({ product, handleDeleteFromCart }) => {
   const allProducts = useContext(ProductAssetContext);
   const { wishlistAddedProduct, handleAddToCart, handleDeleteFromWishList } = allProducts;
+  const [emptyWishlist, setEmptyWishlist] = useState(false);
 
   const { product_id, product_title, product_image, price, description } =
     product;
