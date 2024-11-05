@@ -6,16 +6,27 @@ Gadjet Heaven is an engaging e-commerce platform designed for gadget enthusiasts
 
 - Live Link of This Project [Live Link](https://gadjet-heaven.netlify.app/)
 
-- Requirments [Link](https://google.com)
+- Project Requirments [Link](https://drive.google.com/file/d/1TkbE2KCH-wHNydT1lIp6yJrjDFYg9EXe/view?usp=sharing)   
 
 - Key Features
 
   - In this project ayone can chose their desired product and buy
-  - User can also see the blogs to know more before buying the product
-  - Individuals can chocese maximum of 6 players 
-  - Chosen player can be removed anytime
+  - User can also add their products in thw wishlist
+  - Anytime user can remove product from the cart
+  - usercan chose products from category wise
+  - user can see rpoduct details 
+  - in blogs user can read about the products
   - Fully Responsive and Mobile friendly 
   - Pixel Perfect
+
+- React Fundamental Concepts 
+
+  - React Router for routing 
+  - ContextApi for data managemant
+  - Every widget in devided by components 
+  - useEffect and useState hook mainly used
+  - fetch method for data fetching
+  - useLoadar for dynamic routing
 
 - Techology Used 
 
@@ -25,3 +36,5 @@ Gadjet Heaven is an engaging e-commerce platform designed for gadget enthusiasts
   - React-Toastify
   - React Icons
   - React Re-Charts
+
+  - For Data Management ContextAPI were used

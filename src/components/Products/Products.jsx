@@ -81,9 +81,13 @@ const Products = () => {
                 </div>
                 {/* Products */}
                 <div className="col-span-5 grid md:grid-cols-3 gap-4">
-                    {
-                        filteredProducts.map(product => <ProductCard key={product.product_id} product={product}/>)
-                    }
+                {filteredProducts.length > 0 ? (
+                        filteredProducts.map(product => (
+                            <ProductCard key={product.product_id} product={product}/>
+                        ))
+                    ) : (
+                        <p className="text-center text-xl">Loading products...</p>
+                    )}
                 </div>
             </div>
         </>

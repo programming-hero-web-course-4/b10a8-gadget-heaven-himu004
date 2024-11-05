@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
+import { ProductAssetContext } from "../../context/ProductContext";
 
 const Header = () => {
+
+    const allProducts = useContext(ProductAssetContext);
+    const { wishlistLength, cartAddedProducts } = allProducts; 
+
   return (
     <div className="navbar bg-[#9538E2] container mx-auto p-5">
       <div className="navbar-start">
@@ -118,11 +123,17 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         <div className="flex gap-3 p-1">
-          <div className="bg-white rounded-full md:p-2 p-1">
+          <div className="bg-white rounded-full md:p-2 p-1 relative">
             <BsCart2 className="md:text-xl font-extrabold " />
+            {
+                cartAddedProducts.length > 0 && <span className="badge badge-secondary badge-sm absolute top-0 right-0">{cartAddedProducts.length}</span>
+            }
           </div>
-          <div className="bg-white rounded-full md:p-2 p-1">
-            <CiHeart className="md:text-xl extrabold" />
+          <div className="bg-white rounded-full md:p-2 p-1 relative">
+            <CiHeart className="md:text-xl extrabold relative" />
+            {
+                wishlistLength > 0 && <span className="badge badge-secondary badge-sm absolute top-0 right-0">{wishlistLength}</span>
+            }
           </div>
         </div>
       </div>
