@@ -103,9 +103,9 @@ const Dashboard = () => {
           </button>
           <button
             onClick={() => document.getElementById("my_modal_1").showModal()}
-            className={`rounded-full text-white py-1 px-8 text-lg bg-gradient-to-r from-[#9538E2] to-blue-500 hover:from-pink-500 hover:to-orange-500 ${
-              isCartActive ? "" : "hidden"
-            }`}
+            className={`rounded-full text-white py-1 px-8 text-lg bg-gradient-to-r from-[#9538E2] to-blue-500 hover:from-pink-500 hover:to-orange-500  ${
+              totalPrice > 0 ? "" : "btn-disabled opacity-50"
+            } ${isCartActive ? "" : "hidden"}`}
           >
             Purchase
           </button>
@@ -151,7 +151,7 @@ const Dashboard = () => {
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button onClick={handlePurchase} className="btn px-24 text-lg">
-                Close
+                Buy More
               </button>
             </form>
           </div>

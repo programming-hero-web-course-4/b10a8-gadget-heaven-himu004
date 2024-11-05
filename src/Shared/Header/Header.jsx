@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ProductAssetContext } from "../../context/ProductContext";
 
 const Header = () => {
@@ -9,8 +9,10 @@ const Header = () => {
   const { wishlistAddedProduct, cartAddedProducts } = allProducts;
   // console.log(wishlistAddedProduct);
 
+  const location = useLocation();
+
   return (
-    <div className="navbar bg-[#9538E2] container mx-auto p-5">
+    <div className={`navbar container mx-auto p-5`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -75,10 +77,10 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-[2.5vw] text-white">Gadjet Heaven</a>
+        <a className={`${location.pathname === '/' ? 'text-white' : ''} btn btn-ghost text-[2.5vw] `}>Gadjet Heaven</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-white">
+        <ul className={`${location.pathname === '/' ? 'text-white' : ''} menu menu-horizontal px-1`}>
           <li>
             <NavLink
               to="/"
@@ -123,7 +125,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         <div className="flex gap-3 p-1">
-          <div className="bg-white rounded-full md:p-2 p-1 relative">
+          <div className="bg-white rounded-full md:p-2 p-1 relative border">
             <Link to="/dashboard">
               <BsCart2 className="md:text-xl font-extrabold " />
             </Link>
@@ -133,8 +135,8 @@ const Header = () => {
               </span>
             )}
           </div>
-          <div className="bg-white rounded-full md:p-2 p-1 relative">
-            <CiHeart className="md:text-xl extrabold relative" />
+          <div className="bg-white rounded-full md:p-2 p-1 relative border">
+            <CiHeart className="md:text-xl font-extrabold" />
             {wishlistAddedProduct.length > 0 && (
               <span className="badge badge-secondary badge-sm absolute top-0 right-0">
                 {wishlistAddedProduct.length}
