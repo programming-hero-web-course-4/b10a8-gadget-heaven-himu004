@@ -37,5 +37,6 @@ Gadjet Heaven is an engaging e-commerce platform designed for gadget enthusiasts
   - React-Toastify
   - React Icons
   - React Re-Charts
+  - React Helmet For Dynamic Title
 
   - For Data Management ContextAPI were used

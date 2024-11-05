@@ -5,6 +5,7 @@ import sort from "../../assets/sort.png";
 import purchase from "../../assets/purchase.png";
 import Wishlist from "./Wishlist";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -54,6 +55,10 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | Gadjet Heaven</title>
+        <meta name="description" content="Dashboard" />
+      </Helmet>
       <div className="bg-[#9538E2] text-white text-center space-y-3 py-10">
         <p className="md:text-4xl text-xl font-bold">Dashboard</p>
         <p className="max-w-xl mx-auto">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
@@ -68,6 +69,9 @@ const TriangleBar = (props) => {
 export default function App() {
   return (
     <>
+     <Helmet>
+        <title>Statistic | Gadjet Heaven</title>
+      </Helmet>
       <div className="bg-[#9538E2] text-white text-center space-y-3 py-10">
         <p className="md:text-4xl text-xl font-bold">Statistics</p>
         <p className="max-w-xl mx-auto">
