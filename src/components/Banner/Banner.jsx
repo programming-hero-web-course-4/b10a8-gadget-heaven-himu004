@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import banner from '../../assets/banner.jpg';
 
 const Banner = () => {
@@ -14,9 +15,11 @@ const Banner = () => {
               next level. From smart devices to the coolest accessories, we have
               it all!
             </p>
+            <Link to="/dashboard">
             <button className="btn rounded-full font-bold text-[#9538E2] px-8 text-xl">
               Shop Now
             </button>
+            </Link>
           </div>
         </div>
       </div>
