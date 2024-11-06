@@ -19,7 +19,7 @@ const ProductCard = ({product}) => {
           <p className='text-gray-500'>Price: {price}K</p>
           <div className="card-actions">
             <Link to={`/product/${product_id}`} >
-            <button className="border py-2 px-5 text-[#9538E2] border-[#9538E2] rounded-full">View Details</button>
+            <button className="border-2 py-2 px-5 text-[#9538E2] border-[#9538E2] rounded-full">View Details</button>
             </Link>
           </div>
         </div>

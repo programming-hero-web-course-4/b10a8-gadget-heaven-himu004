@@ -29,14 +29,14 @@ const ProductDetails = () => {
     specification,
     availability,
     rating,
-  } = product;
+  } = product || {};
 
   const startRating = Array(Math.round(rating)).fill(<FaStar />);
 
   return (
     <div className="mb-28">
-      <div className="bg-[#9538E2] h-56 text-center space-y-5 text-white">
-        <p className="text-2xl md:text-5xl font-bold">Product Details</p>
+      <div className="bg-[#9538E2] h-64 text-center space-y-5 text-white">
+        <p className="text-2xl md:text-5xl font-bold pt-5">Product Details</p>
         <p className="max-w-md text-center mx-auto pb-5">
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!

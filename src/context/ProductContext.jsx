@@ -10,7 +10,7 @@ const ProductContext = ({ children }) => {
   const [wishlistAddedProduct, setWishlistAddedProduct] = useState([]);
 
   useEffect(() => {
-    fetch("products.json")
+    fetch("/products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

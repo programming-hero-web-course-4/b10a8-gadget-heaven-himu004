@@ -150,8 +150,8 @@ const Dashboard = () => {
           <img src={purchase} alt="" />
           <p className="py-4 text-xl font-bold">Payment Successfully</p>
           <div className="divider px-10"></div>
-          <p className="">Thanks for your purchasing</p>
-          <p className="">Total Cost: ${totalPrice}</p>
+          <p className="text-gray-500 font-bold">Thanks for your purchasing</p>
+          <p className="text-lg font-bold ">Total Cost: ${totalPrice}</p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}

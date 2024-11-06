@@ -18,7 +18,7 @@ const Header = () => {
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 "
+              className="h-4 w-4 "
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -77,10 +77,20 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className={`${location.pathname === '/' ? 'text-white' : ''} btn btn-ghost text-[2.5vw] `}>Gadjet Heaven</a>
+        <a
+          className={`${
+            location.pathname === "/" ? "text-white" : ""
+          } btn btn-ghost md:text-4xl text-md `}
+        >
+          Gadjet Heaven
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className={`${location.pathname === '/' ? 'text-white' : ''} menu menu-horizontal px-1`}>
+        <ul
+          className={`${
+            location.pathname === "/" ? "text-white" : ""
+          } menu menu-horizontal px-1`}
+        >
           <li>
             <NavLink
               to="/"
@@ -136,7 +146,9 @@ const Header = () => {
             )}
           </div>
           <div className="bg-white rounded-full md:p-2 p-1 relative border">
-            <CiHeart className="md:text-xl font-extrabold" />
+            <Link to="/dashboard">
+              <CiHeart className="md:text-xl font-extrabold" />
+            </Link>
             {wishlistAddedProduct.length > 0 && (
               <span className="badge badge-secondary badge-sm absolute top-0 right-0">
                 {wishlistAddedProduct.length}

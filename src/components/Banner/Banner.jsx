@@ -22,7 +22,7 @@ const Banner = () => {
       </div>
      
         <div className='flex justify-center md:p-0 p-3'>
-        <div className='md:-mt-52 -mt-28 md:w-2/4 border-4 border-gray-100 p-4 bg-[#ffffff34] rounded-xl'>
+        <div className='md:-mt-52 -mt-28 md:w-2/3 border-4 border-gray-100 p-4 bg-[#ffffff34] rounded-xl'>
             <img className='rounded-xl' src={banner} alt="" />
         </div>
         </div>
