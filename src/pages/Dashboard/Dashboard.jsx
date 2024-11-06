@@ -6,6 +6,7 @@ import purchase from "../../assets/purchase.png";
 import Wishlist from "./Wishlist";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -36,6 +37,12 @@ const Dashboard = () => {
     setCartAddedProducts([]);
     setWishlistAddedProduct([]);
     navigate("/");
+  };
+
+  const handleError = () => {
+    toast.error("Your Cart is Empty", {
+      position: "top-left",
+    });
   };
 
   const handleSortByPrice = () => {
@@ -98,7 +105,7 @@ const Dashboard = () => {
             Total Cost: {totalPrice}
           </p>
           <button
-            onClick={handleSortByPrice}
+            onClick={cartAddedProducts.length === 0 ? handleError : handleSortByPrice}
             className={`flex items-center gap-1 border border-[#9538E2] rounded-full text-[#9538E2] py-1 px-5 text-md bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent ${
               isCartActive ? "" : "hidden"
             }`}

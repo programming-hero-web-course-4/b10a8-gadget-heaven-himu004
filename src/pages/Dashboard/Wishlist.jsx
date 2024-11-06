@@ -21,7 +21,10 @@ const Wishlist = ({ product, handleDeleteFromCart }) => {
             <p className="text-gray-500">{description}</p>
             <p className="font-bold">Price: {price}K</p>
             <button 
-            onClick={() => handleAddToCart(product)}
+            onClick={() => {
+              handleAddToCart(product);
+              handleDeleteFromWishList(product_id);
+            }}
             className="bg-[#9538E2] text-white px-3 py-1 rounded">Add to cart</button>
           </div>
           <div>
